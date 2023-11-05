@@ -23,6 +23,20 @@ Run calculation
 ```
 node ./dist/index.js
 ```
+Result
+```
+{
+  "left": 2,
+  "operator": "+",
+  "right": {
+    "left": 3,
+    "operator": "*",
+    "right": 6
+  }
+}
+
+20
+```
 
 ## Source
 * [Wikipedia](https://en.wikipedia.org/wiki/Operator-precedence_parser)
