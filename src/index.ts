@@ -3,9 +3,9 @@ import { Iterator } from "./iterator";
 import { Parser } from "./parser";
 import { Tokenizer } from "./tokenizer";
 
-const stringCalc = '2 + 3 * 6';
+const input = '2 + 3 * 6';
 
-const tokenizer = new Tokenizer(stringCalc);
+const tokenizer = new Tokenizer(input);
 
 const tokinazedInput = tokenizer.tokenize();
 const formattedInput = tokenizer.format(tokinazedInput);
