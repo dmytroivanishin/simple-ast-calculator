@@ -1,7 +1,7 @@
 import { Iterator } from "./iterator";
-import { ASTNode, Operator } from "./types";
+import { Operator } from "./types";
 
-export class Node implements ASTNode {
+export class ASTNode {
   public left: number | ASTNode;
 
   public operator: Operator;
@@ -14,8 +14,8 @@ export class Node implements ASTNode {
     this.right = right;
   }
 
-  static createNode(left: number | Node, operator: Operator, right: number | Node) {
-    return new Node(left, operator, right);
+  static createNode(left: number | ASTNode, operator: Operator, right: number | ASTNode) {
+    return new ASTNode(left, operator, right);
   }
 }
 
@@ -50,7 +50,7 @@ export class Parser {
         lookaheadToken = this.iterator.lookahead();
       }
 
-      left = Node.createNode(left, operator, right);
+      left = ASTNode.createNode(left, operator, right);
     }
 
     return left as ASTNode;

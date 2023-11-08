@@ -1,5 +1,5 @@
-import { BinaryMath } from "./math";
-import { ASTNode } from "./types";
+import { ASTMath } from "./math";
+import { ASTNode } from "./parser";
 
 export class SimpleASTCalculator {
   private AST: ASTNode;
@@ -10,29 +10,29 @@ export class SimpleASTCalculator {
 
   public compile(node: [ASTNode] = [this.AST]): number {
     return node.reduce<number>((_, node: ASTNode) => {
-      if (String(node.left) === '[object Object]') {
-        const left = this.compile([node.left as ASTNode]);
+      if (node.left instanceof ASTNode) {
+        const left = this.compile([node.left]);
 
         const compiledLeftNode = {
           ...node,
           left,
         };
 
-        return BinaryMath.calculate(compiledLeftNode);
+        return ASTMath.calculate(compiledLeftNode);
       }
 
-      if (String(node.right) === '[object Object]') {
-        const right = this.compile([node.right as ASTNode]);
+      if (node.right instanceof ASTNode) {
+        const right = this.compile([node.right]);
 
         const compiledRightNode = {
           ...node,
           right,
         };
 
-        return BinaryMath.calculate(compiledRightNode);
+        return ASTMath.calculate(compiledRightNode);
       }
 
-      return BinaryMath.calculate(node);
+      return ASTMath.calculate(node);
     }, 0);
   };
 }

@@ -5,12 +5,6 @@ export enum Operator {
   DEVIDE = '/',
 };
 
-export interface ASTNode {
-  left: number | ASTNode;
-  operator: Operator;
-  right: number | ASTNode;
-}
-
 export enum TokenType {
   Numeric = 'Numeric',
   Operator = 'Operator',
