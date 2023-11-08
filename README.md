@@ -53,4 +53,4 @@ Result
 * [Article 7](https://pest.rs/book/examples/calculator.html)
 * [Article 8](https://eli.thegreenplace.net/2012/08/02/parsing-expressions-by-precedence-climbing)
 * [Article 9](https://medium.com/basecs/leveling-up-ones-parsing-game-with-asts-d7a6fc2400ff)
-* [Vdieo 3](https://youtu.be/SToUyjAsaFk)
+* [Video 3](https://youtu.be/SToUyjAsaFk)
