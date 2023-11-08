@@ -9,7 +9,7 @@ export class SimpleASTCalculator {
   }
 
   public compile(node: [ASTNode] = [this.AST]): number {
-    return node.reduce<number>((_, node: ASTNode) => {
+    return node.reduce((_, node: ASTNode) => {
       if (node.left instanceof ASTNode) {
         const left = this.compile([node.left]);
 
