@@ -2,10 +2,10 @@ import { TokenType } from "../types";
 import { NumericToken, Token, creators } from "./token-creator";
 
 export const patterns = {
-  Numeric: /^([0-9]+)/,
-  Operator: /^(\+|\-|\*|\/)/,
-  Space: /^(\s)/,
-  Error: /^([^\d\s\+\-\*\/])+/,
+  [TokenType.Numeric]: /^([0-9]+)/,
+  [TokenType.Operator]: /^(\+|\-|\*|\/)/,
+  [TokenType.Space]: /^(\s)/,
+  [TokenType.Error]: /^([^\d\s\+\-\*\/])+/,
 };
 
 export class Tokenizer {
