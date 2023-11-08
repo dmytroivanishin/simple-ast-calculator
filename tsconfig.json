@@ -3,6 +3,7 @@
     "target": "ES5",
     "allowJs": false,
     "checkJs": false,
+    "declaration": true,
     "sourceMap": true,
     "outDir": "./dist",
     "esModuleInterop": true,
