@@ -1,4 +1,5 @@
 {
+  "exclude": ["tests"],
   "compilerOptions": {
     "target": "ES5",
     "allowJs": false,
@@ -9,5 +10,10 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-  }
+    "resolveJsonModule": true,
+  },
+  "files": [
+    "src/index.ts",
+    "src/example.ts"
+  ]
 }

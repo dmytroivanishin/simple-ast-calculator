@@ -1,0 +1,9 @@
+{
+  "left": {
+    "left": 2,
+    "operator": "*",
+    "right": 3
+  },
+  "operator": "+",
+  "right": 4
+}

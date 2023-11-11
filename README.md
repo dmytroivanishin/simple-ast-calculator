@@ -8,7 +8,7 @@ Install dependencies
 npm i
 ```
 
-Type expression to [input](https://github.com/dmytroivanishin/simple-ast-calculator/blob/main/src/index.ts#L6) variable into index.ts
+Type expression to [input](https://github.com/dmytroivanishin/simple-ast-calculator/blob/main/src/example.ts#L6) variable into index.ts
 
 ```
 const input = '2 + 3 * 6';
@@ -21,10 +21,13 @@ npm run build
 
 Run calculation
 ```
-node ./dist/index.js
+npm run example
 ```
 Result
 ```
+========== INPUT ==========
+2 + 3 * 6
+=========== AST ===========
 {
   "left": 2,
   "operator": "+",
@@ -34,7 +37,7 @@ Result
     "right": 6
   }
 }
-
+========= RESULT ==========
 20
 ```
 
