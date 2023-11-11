@@ -10,29 +10,24 @@ export class SimpleASTCalculator {
 
   public compile(node: [ASTNode] = [this.AST]): number {
     return node.reduce((_, node: ASTNode) => {
+      let compiledLeftNode: number = NaN;
+      let compiledRightNode: number = NaN;
+
       if (node.left instanceof ASTNode) {
-        const left = this.compile([node.left]);
-
-        const compiledLeftNode = {
-          ...node,
-          left,
-        };
-
-        return ASTMath.calculate(compiledLeftNode);
+        compiledLeftNode = this.compile([node.left]);
       }
 
       if (node.right instanceof ASTNode) {
-        const right = this.compile([node.right]);
-
-        const compiledRightNode = {
-          ...node,
-          right,
-        };
-
-        return ASTMath.calculate(compiledRightNode);
+        compiledRightNode = this.compile([node.right]);
       }
 
-      return ASTMath.calculate(node);
+      const compiledNode = {
+        ...node,
+        left: compiledLeftNode || node.left,
+        right: compiledRightNode || node.right,
+      };
+
+      return ASTMath.calculate(compiledNode);
     }, 0);
   };
 }
